@@ -13,6 +13,8 @@
         <domain includeSubdomains="true">10.0.2.2</domain>
         <!-- Onion services -->
         <domain includeSubdomains="true">onion</domain>
+        <!-- I2P services -->
+        <domain includeSubdomains="true">i2p</domain>
 
         <!-- Domains that are used for LANs -->
         <!-- These are IANA recognized special use domain names, see https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml -->

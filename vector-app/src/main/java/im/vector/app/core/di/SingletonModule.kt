@@ -77,6 +77,8 @@ import org.matrix.android.sdk.api.raw.RawService
 import org.matrix.android.sdk.api.session.Session
 import org.matrix.android.sdk.api.session.sync.filter.SyncFilterParams
 import org.matrix.android.sdk.api.settings.LightweightSettingsStorage
+import java.net.InetSocketAddress
+import java.net.Proxy
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class) @Module abstract class VectorBindModule {
@@ -159,7 +161,8 @@ import javax.inject.Singleton
                 customEventTypesProvider = vectorCustomEventTypesProvider,
                 syncConfig = SyncConfig(
                         syncFilterParams = SyncFilterParams(lazyLoadMembersForStateEvents = true, useThreadNotifications = true)
-                )
+                ),
+                proxy = Proxy( Proxy.Type.HTTP, InetSocketAddress( "127.0.0.1", 4444 ) )
         )
     }
 
