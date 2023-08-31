@@ -275,23 +275,13 @@ class OnboardingViewModel @AssistedInject constructor(
                 )
             }
             OnboardingFlow.SignIn -> openServerSelectionOrDeeplinkToOther()
-//                when {
-//                vectorFeatures.isOnboardingCombinedLoginEnabled() -> {
-//                    handle(OnboardingAction.HomeServerChange.SelectHomeServer(deeplinkOrDefaultHomeserverUrl()))
-//                }
-//                else ->
-//            }
 
             OnboardingFlow.SignInSignUp -> openServerSelectionOrDeeplinkToOther()
         }
     }
 
     private fun openServerSelectionOrDeeplinkToOther() {
-//        when (loginConfig) {
-//            null ->
                 _viewEvents.post(OnboardingViewEvents.OpenServerSelection)
-//            else -> handleHomeserverChange(OnboardingAction.HomeServerChange.SelectHomeServer(deeplinkOrDefaultHomeserverUrl()), ServerType.Other)
-//        }
     }
 
     private fun handleUserAcceptCertificate(action: OnboardingAction.UserAcceptCertificate) {
